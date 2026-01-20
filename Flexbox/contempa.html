@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo Empacotado</title>
+
+    <style>
+        .container{
+            display: flex;
+            height: 500px;
+            padding: 10px;
+            background-color: black;
+            flex-flow: row wrap;
+        }
+
+        .item{
+            background-color: white;
+            height: 40px;
+            width: 300px;
+            margin: 5px 5px;
+        }
+
+        .contain{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+        }
+
+        .contain2{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+            align-content: flex-start;
+        }
+
+        .contain3{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+            align-content: flex-end;
+        }
+
+        .contain4{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+            align-content: center;
+        }
+
+        .contain5{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+            align-content: space-evenly;
+        }
+
+        .contain6{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+            align-content: space-around;
+        }
+        .contain7{
+            height: 500px;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: black;
+            padding: 10px;
+            align-content: space-between;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Confusões</h1>
+    <p>É muito comum confundir align-content, justify-content e align-items.</p>
+    <ul>
+        <li>justify-content: é a propriedade que alinha um conteúdo a partir do eixo main</li>
+        <li>align-items: é a propriedade que alinha um conteúdo a partir do eixo transversal</li>
+        <li>align-content: também alinha o eixo transversal, porém somente quando os elementos estão empacotados</li>
+    </ul>
+    <p>Ou seja, se tem content e align na mesma frase, só pode mexer quando tiver empacotamento.</p>
+    <p><strong>Um Adendo:</strong> porque nos outros exemplos o strech não estava funcionando? Ou seja, eu colocava os itens e aumentava a altura do container, mas os itens não acompanhavam a altura? O motivo é muito simples: por padrão vem strach, mas eu não deixei nessa configuração padrão. Nos itens eu tinha colocado heigh de 50px, ou seja, por mais que a altura do container fosse de 500px, o height dos itens ainda estaria travado nos 50px que eu defini.</p>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-20 175645.png">
+
+    <main class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <p>E um detalhe que talvez esqueça é que tudo isso se trata do comportamento que eu quero que os elementos tenham dentro do container APENAS QUANDO tiver quebra. Para ter quebra, é preciso que o wrap esteja sendo usado (flex-flow: column/row wrap).</p>
+
+    <h1>Como Funciona O Calculo Strech?</h1>
+    <p>Quando a altura aumentar, será feito um calulo com base em toda a área do container e, verticalmente, será divido pelo número de linhas que estão ali dentro. Ele vai então posicionar esses itens no topo de cada divisão, alongando os itens até chegar na parte inferior.</p>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-20 180532.png" alt="">
+    <p></p>
+    <h1>align-content - Alinhamento Empacotado</h1>
+
+    <main class="contain">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+    <h1>align-content: flex-start</h1>
+    <p>Assim como para o justify-content e align-items, os elementos serão posicionados no começo da linha transversal.</p>
+    <main class="contain2">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <h1>align-content: flex-end</h1>
+    <p>Os elementos serão posicionados no cross end, ou seja, no ponto em que termina a linha da direção transversal..</p>
+    <main class="contain3">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <h1>align-content: center</h1>
+    <p>Será calculado a área total e os elementos serão posicionados no meio, com o mesmo espaçamento entre o objeto e a parte superior e o elemento e a parte inferior.</p>
+    <main class="contain4">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <h1>align-content: space-evenly</h1>
+    <p>A area do container será calculada e todos os elementos terão o mesmo espaçamento, começando das bordas.</p>
+    <main class="contain5">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
+    </main>
+
+    <h1>align-content: space-around</h1>
+    <p>A área do container será calculada e dividida pela quantidade de elementos, resultando em X espaços vazios. Os elementos serão colocados no centro desses espaços vazios.</p>
+    <main class="contain6">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <h1>align-content: space-between</h1>
+    <p>Um elemento será colocado no cross start e outro no cross end, enquanto o outro (se tiver) ou os outros no meio.</p>
+    <main class="contain7">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
+    </main>
+</body>
+</html>
