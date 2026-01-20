@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento Dos Eixos</title>
+
+    <style>
+
+        .container{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: black;
+            padding: 10px;
+        }
+
+        .container1{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: flex-start;
+            height: 200px;
+        }
+
+        .container2{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: flex-start;
+            height: 200px;
+        }
+
+        .container3{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: flex-end;
+            height: 200px;
+        }
+
+        .container4{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: flex-end;
+            height: 200px;
+        }
+
+        .container5{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .container6{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: space-between;
+            height: 200px;
+        }
+
+        .container7{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: space-evenly;
+            height: 200px;
+        }
+
+        .container8{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            justify-content: space-around;
+            height: 200px;
+        }
+
+        .container9{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: black;
+            padding: 10px;
+            height: 200px;
+            align-items: start;
+    
+        }
+        .container10{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: black;
+            padding: 10px;
+            height: 200px;
+            align-items: flex-start;
+        }
+
+        .container11{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: black;
+            padding: 10px;
+            height: 200px;
+            align-items: flex-end;
+        }
+
+        .container12{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: black;
+            padding: 10px;
+            height: 200px;
+            align-items: center;
+        }
+
+        .itens{
+            height: 50px;
+            width: 50px;
+            border: 2px dashed white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Alinhamento Nos Eixos</h1>
+    <p>Este tema ainda é aplicável ao container, ao elemento pai. Ou seja, a caixa que "abriga" elementos.</p>
+    <div class="container">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+    <p>Como dito antes, existem 2 eixos: o transversal (cross), que é de cima para baixo (ou de baixo para cima se for reverse) e principal (main), que é horizontal da esquerda para direita (ou direita para esquerda se for reverse).</p>
+    <h1>Main = justify-content</h1>
+    <p>Caso eu queira mexer no alinhamento horizontal, eu utilizo a propriedade <code>justify-content</code>. Esta é a função do justify-content: alinhar o item horizontalmente.</p>
+    <p>Porém é sempre preciso se atentar se estou utilizando um flex-direction row ou column, pois isso afeta a aplicação dessa propriedade.</p>
+    <h2>Main Start e Main end</h2>
+    <p>Quando digo apenas "eixo principal" (ou main axis), eu posso querer me referir apenas à orientação desse eixo, ou seja, se é horizontal ou vertical, e sendo horizontal, se vai da esquerda para direita ou o contrário.</p>
+    <p>Porém, para o justify-content é preciso exatidão, uma exatidão que só a direção não oferece. Para isso, se utiliza outro conceito já mostrado: main start e main end.</p>
+    <p>O main start marca onde a linha horizontal começa, enquanto que o main end marca onde termina. Essas 2 estão no começo e final da largura do container.</p>
+    <h2>justify-content: flex-start</h2>
+    <p>O valor flex-start define que o elemento será posicionado no ponto onde começa o eixo. Sempre na esquerda? Não, como já dito, para onde a direção estiver apontando</p>
+    <h3>justify-content: flex-start (row normal)</h3>
+    <div class="container1">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+    <h3>justify-content: flex-start (row-reverse)</h3>
+    <div class="container2">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h2>justify-content: flex-end</h2>
+    <p>O valor flex-end é o oposto: alinha o conteúdo no main end, ou seja, no ponto onde o eixo termina (lembrando onde o eixo começa e termina depende totalmente se estou usando normal ou reverse)</p>
+    <h3>justify-content: flex-end (row normal)</h3>
+    <div class="container3">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+    <h3>justify-content: flex-end (row-reverse)</h3>
+    <div class="container4">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h2>justify-content: center</h2>
+    <p>Outro valor é o center, que posiciona o elemento no centro do container:</p>
+        <div class="container5">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+    
+    <h2>justify-content: space-between</h2>
+    <p>space-between coloca um elemento no main-start, outro elemento no main-end e o outro (ou os outros) no meio, com um espaçamento uniforme (o mesmo espaço) entre eles.</p>
+    
+    <div class="container6">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h2>justify-content: space-evenly</h2>
+    <p>space-evenly faz com que todos os elementos tenha o mesmo espaçamento entre si. Ele faz isso logo no main start, o espaço entre entre o primeiro item o main start será o mesmo para todos (com base em quantos itens tem e o tamanho do container)</p>
+    
+    <div class="container7">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h2>justify-content: space-around</h2>
+    <p>space-around faz uma conta diferente. Ele pega o container, divide o espaço baseado na quantidade de elementos (ou seja, se tem 3 elementos, divide o espaço do container por 3, se tem 4 elementos, divide o espaço por 4, e a mesma lógica para qualquer valor), e centraliza o elemento no meio desses espaços.</p>
+    
+    <div class="container8">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h1>O Que Muda Entre Os justify-content?</h1>
+    <p>Pode parecer que é apenas onde os elementos serão posicionados, mas não é bem por ai. Na verdade, cada jusitify-content calcula o espaço do container de forma diferente. Essa diferença nos cálculos é o que muda o posicionamento dos elementos dentro do container.</p>
+
+    <h1>Transversal, Cross Start e Cross End</h1>
+    <p>Outro eixo visto foi o transversal (ou cross). Esse eixo é vertical e vai de cima para baixo se a direção estiver normal (ou com wrap-reverse) e de baixo para cima se estiver em reverse.</p>
+    <p>Assim como o main axis, ele tem seus pontos onde demarca seu começo e seu fim, e esses pontos não são cima = começo e baixo = fim. Como dito várias vezes, o começo e o final depende se a direção está normal ou reverse.</p>
+    <strong>E DETALHE</strong>: Tanto a direção row quanto a direção column tem um eixo main e cross. Justify content altera na horizontal, enquanto que aling-items na vertical.
+    <p>Diferente do main axis, o cross axis usa aling-items para definir o posicionamento dos itens.</p>
+    <p>Para alterar o posicionamento aling-items, é preciso ter um container com uma altura um pouco maior.</p>
+    <h2>Strech</h2>
+    <p>Por padrão, o navegador define um container com valor strech. Isso significa que se o container tiver uma altura maior que a do elemento, o elemento vai se aumentar seu tamanho também.</p>
+
+    <h2>aling-items: flex-start</h2>
+    <p>Faz o elemento se posicionar no começo do eixo vertical</p>
+    <h3>align-items: flex-start (row normal)</h3>
+    <div class="container9">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+    <h3>align-items: flex-start (row reverse)</h3>
+    <div class="container10">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h3>align-items: flex-end </h3>
+    <div class="container11">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+    <h3>align-items: center</h3>
+    <div class="container12">
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+        <div class="itens"></div>
+    </div>
+
+    <h1>aling-items E jusitify-content</h1>
+    <p>Olhando os 2 exemplos, é possível perceber uma coisa:</p>
+    <ul>
+        <li>Todos os jusitify-content permaneceram só na parte superior do container</li>
+        <li>Todos os align-items permaneceram somente na parte esquerda do container</li>
+    </ul>
+    <p>Isso acontece por algo já explicado: aling-items altera somente o eixo vertical, enquanto que jusitify-content somente o eixo horizontal. Caso eu queira alterar as duas coisas, é preciso usar as 2 propriedades.</p>
+</body>
+</html>

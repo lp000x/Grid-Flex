@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralizar Com Flexbox</title>
+
+    <style>
+        .container{
+            display: flex;
+            background-color: green;
+            height: 500px;
+            width: 1000px;
+            flex-flow: row nowrap;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item{
+            background-color: blue;
+            height: 50px;
+            width: 50px;
+        }
+
+        #center{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div#cr{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            background-color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Centralização</h1>
+    <p>No projeto anterior, da tela de Login, para centralizar o elemento foi necessário usar várias propriedades. Caso eu tivesse feito o mesmo projeto com flexbox, nada daquilo seria necessário.</p>
+    <p>E mais: é uma centralização "absoluta", independente se o container é um quadrado, retangulo ou mesmo um circulo. independente da forma e do tamanho, o item estará centralizado.</p>
+
+    <main id="center">
+        <div id="cr"></div>
+    </main>
+    <main class="container">
+        <div class="item"></div>
+    </main>
+    
+</body>
+</html>
