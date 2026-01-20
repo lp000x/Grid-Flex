@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direções E Eixo</title>
+
+    <style>
+
+        .container-pai1{
+            background-color: black;
+            height: 100px;
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container-pai2{
+            background-color: black;
+            height: 100px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-pai3{
+            background-color: black;
+            height: 100px;
+            width: 400px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .container-pai4{
+            background-color: black;
+            height: 100px;
+            width: 400px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .itens-filhos1{
+            height: 50px;
+            width: 50px;
+            border: 3px dashed rgb(253, 252, 252);
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex Direction: Container</h1>
+    <p>Existem 4 configurações que podem ser aplicadas como flex direction:</p>
+    <ul>
+        <li>Flex-direction: row - faz os itens dentro do container serem dispostos em linha, <i><strong>por padrão</strong></i>, da esquerda para a direita.</li>
+        <li>Flex-direction: column - faz os itens dentro do container serem dispostos em coluna <strong><i>por padrão</i></strong>, de cima para baixo.</li>
+    </ul>
+    <div class="container-pai1">
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+    </div>
+        <div class="container-pai2">
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+    </div>
+    <p>Eu repeti e coloquei destacado "por padrão". Isso porque existem uma variação para coluna e d linha:</p>
+    <ul>
+        <li>Flex-direction: row-reverse - ainda mantém a disposição dos itens em linha, mas em vez da esquerda para a direita, os itens vão ser exibidos da direita para esquerda.</li>
+        <li>Flex-direction: column-reverse - ainda mantém a dispoição dos itens em coluna, mas de baixo para cima em vez de cima para baixo.</li>
+    </ul>
+        <div class="container-pai3">
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+    </div>
+        <div class="container-pai4">
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+        <div class="itens-filhos1"></div>
+    </div>
+    <h1>AXIS (EIXOS)</h1>
+    <p>Quando eu crio um display flex com um flex-direction, automaticamente são criados eixos.</p>
+    <p>Esses eixos dependem se é uma coluna ou uma linha e, além disso, se é reverse ou sem reverse.</p>
+    <h2>Quais São Os Eixos?</h2>
+    <p>Os eixos são: main e transversal.</p>
+    <strong>main-axis</strong>: o eixo main é criado horizontalmente cruzando todos o container. É como se fosse criada uma linha invisivel posta horizontalmente bem na metade do container.
+    <strong>transversal-axis</strong>: também chamado de cross-axis, esse eixo é criado de cima para baixo do container. Assim como o main, é uma linha invisivel.
+    <p>Porém, quando eu coloco row-reverse ou column-reverse, não é apenas a disposição dos elementos que mudam, mas a orientação dos eixos também. Assim como, ao definir row-reverse, os elementos são dispostos da direita para a esquerda, o eixo também muda, indo da direita para a esquerda. Via de regra, os eixos acompanham a direção da dispoção dos elementos, dispoição essa definida pelo reverse.</p> 
+    <p>Para que saber localizar os eixos são importantes? Porque o justify conten se baseia nos eixos.</p>
+    <h1>Main start, Main End, Cross Start, Cross End</h1>
+    <p>Se o eixo diz respeito à direção que os eixos apontam, o start e end (de main e cross) são os exatos pontos onde o eixo começa e termina. Por padrão, esses pontos estão no container.</p>
+</body>
+</html>

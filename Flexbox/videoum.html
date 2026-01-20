@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1</title>
+
+    <style>
+        main{
+            background-color: black;
+            width: 400px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        .d1{
+            background-color: blue;
+            width: 130px;
+            height: 80px;
+            display: inline-block;
+
+        }
+
+        #main2{
+            background-color: black;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        #m3{
+            background-color: black;
+            padding: 10px;
+            display: flex;
+        }
+
+        .d2{
+            background-color: blue;
+            width: 200px;
+            height: 80px;
+            flex: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox e GridLayout</h1>
+    <p>Essas 2 novas tecnologias vieram para o CSS em sua atualização de 2017, visando resolver problemas de responsividade. As caixas, presentes nas versões anteriores de CSS e HTML, eram rigidas e não ofereciam alterações flexiveis. As 2 novas tecnologias vieram para resolver esse problema, tornando as caixas que compõem um site mais maleáveis.</p>
+    <h1>Qual A Utilidade do Flexbox?</h1>
+    <p>Como dito acima, o flexbox e o GridLayout (assunto do próximo capitulo) vieram para resolver um problema. No caso do flexbox, que problema ele resolve? O flexbox não tem utilidade se eu precisar de medidas exatas e inflexiveis, porém, caso eu precisa reposicionar as caixas, ele é tem muita utilidade. Em outras palavras, seu eu precisar de flexibilidade na construção da página, o flexbox será muito útil.</p>
+    <h2>Modelo de Caixas (Primeiros Capitulos)</h2>
+    <p>Nos primeiros capitulos, foi explicado o conceito de caixas.</p>
+    <main>
+        <h1 class="d1">
+            Olá
+        </h1>
+        <h1 class="d1">
+            Olá
+        </h1>
+        <h1 class="d1">
+            Olá
+        </h1>
+    </main>
+
+    <p>Acima tem uma caixa com outras 3 caixas dentro. Caso eu queria colocar essas 3 caixas na horizontal dentro da principal, dentro do seu container, eu posso fazer apenas com um diplay inline block, não tem necessidade do flexbox.</p>
+    <p>Porém, caso eu precise alterar o tamanho do container, vai quebrar tudo.</p>
+    <i>
+        <h2>container será um termo muito utilizado em flexbox</h2>
+
+    </i>
+        <main id="main2">
+        <h1 class="d1">
+            Olá
+        </h1>
+        <h1 class="d1">
+            Olá
+        </h1>
+        <h1 class="d1">
+            Olá
+        </h1>
+    </main>
+    <p>A quebra ocorreu porque a box tem um valor definido (heigh: 100px width: 400px), o valor que eu mesmo defini no style em css. Em flexbox, eu não defino valores especificos. Quem vai definir o tamanho dessa caixa são os conteúdos e container dela.</p> 
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-20 103847.png">
+    <p>O que geralmente acontecia é que o Dev criava todo site com as dimensões de uma tela, computador por exemplo, mas ao abrir o site em um celular ou tablet, os elementos transbordavam ou quebravam.</p>
+    <h1>IMPORTANTE DETALHE</h1>
+    <p>Display é uma propriedade geral. O que isso quer dizer? Até agora eu vi só display block ou display inline. Talvez dê a entender que display é intrinseco a block ou inline, ou seja, são a mesma coisa. mas isso não é verdade. Display, como acabei de dizer, é uma propriedade geral que não está limitado ou intrinseco a um valor ou outro. Dito isso, existem os seguintes valores para display:</p>
+    <ul>
+        <li>Block: faz a caixa ocupar toda a largura da tela e cria quebra de linhas;</li>
+        <li>Inline: ocupa apenas a largura do elemento, ocupando a mesma linha;</li>
+        <li>None: faz com que o elemento não seja exibido;</li>
+        <li>Flex: ativa a tecnologia flexbox (permitindo usar seus recursos, se não usar display flex, não dá para usar, justamente porque não foi ativada);</li>
+        <li>Grid: ativa a tecnologia GridLayout, permitindo usar seus recursos.</li>
+    </ul>
+    <p>Por definição, a propriedade display diz qual tipo de caixa o elemento terá e, com isso, como ele se comportará na pagina.</p>
+    <h1>FlexBox</h1>
+    <p>Porém, se eu fizer a mesma coisa com a caixa, porém utilizando o display: flex (ou seja, instruindo que a caixa será flexivel) e flex: auto para seus elementos, isso acontece:</p>
+
+        <main id="m3">
+        <h1 class="d2">
+            Olá
+        </h1>
+        <h1 class="d2">
+            Olá
+        </h1>
+        <h1 class="d2">
+            Olá
+        </h1>
+    </main>
+
+    <p>Não há quebra nem transbordamento, os itens se adaptam à largura do main e vice-versa.</p>
+    <h1>Container</h1>
+    <p>Toda vez que eu for trabalhar com flexbox, que vai receber o display flex é o pai. E quem é esse "pai"? É o container, ou seja, a caixa onde todas as outras caixas que vou trabalhar com a intenção de serem flexiveis (todos os elementos) vão estar dentro. Os itens dentro do container, por sua vez, não vão receber o display flex, mas outros valores.</p>
+</body>
+</html>

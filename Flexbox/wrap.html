@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Wrap</title>
+    
+    <style>
+
+        .container{
+            display: flex;
+            background-color: black;
+            flex-direction: row;
+        }
+
+        .container2{
+            display: flex;
+            background-color: black;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+        }
+
+        .container4{
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .container5{
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+
+        }
+
+        .container6{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+        }
+
+        .container7{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+
+        }
+
+
+        .item{
+            border: 3px dashed white;
+            height: 50px;
+            width: 200px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Flex Wrap</h1>
+    <p>Wrap signfica "empacotamento" e é uma propriedada colocada apenas no container pai.</p>
+    <p>Antes de entrar nos valores, o que é esse empacotamento? Quando acontece?</p>
+    <main class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+    <p>Nesse exemplo, existem os 3 quadrados e uma enorme espaço em preto sobrando. O empacotamento, no caso de flexbox, vai ocorrer quando todo esse espaço preto acabar e, nesse encurtamento, começar a tomar espaço dos itens (ou seja, das caixas brancas). Quando chegar nesse ponto, os itens vão encolher sua largura (e altura também, se for o caso) para caber dentro desse espaço.</p>
+    <p>Porém, isso vai depender do conteúdo. Alguns (como textos muito grandes, imagens e outros desse tipo) vão quebrar em vez de encolher.</p>
+    <h1>Nowrap</h1>
+    <p>Dito isso, o nowrap é um valor padrão, ou seja, mesmo que eu não faça definição alguma será esse valor definido pelo próprio navegador. Ele instrui justamente isso: para não quebrar o conteúdo (o item) se o tamanho da tela reduzir. Em vez disso, é para encolher. Mais do que simplesmente não encolher, essa função visa deixar os elementos na disposição que coloquei (por exemplo, caso eu queira manter 3 itens na mesma linha).</p>
+    <h1>Eixos E Wrap</h1>
+    <p>Essa é uma coisa para ter em mente. Quando eu defino wrap, eu estou instruindo a quebrar o conteúdo. Mas para qual direção ele vai? Se eu tenho 3 itens na horizontal e no espaço só cabem 2, para onde vai o terceiro? Para cima ou para baixo?</p>
+    <p>Ele vai seguir a direção do eixo transversal. Sempre que ocorrer uma quebra, se trata do eixo transversal.</p>
+    </ul>
+    <main class="container2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </main>
+<br>
+<h1>wrap-reverse</h1>
+<p>O wrap-reverse diz que, quando o espaço acabar e a quebra for acontecer, o item deve ir em direção oposta ao eixo transversal, ou seja, ao eixo vertical.</p>
+<p>Porém, tem um detalhe importante. Isso se aplica tanto a elementos que estejam como row quanto como column. A diferença é que se estiver como linha, ele vai para a linha de baixo (ou de cima, se for wrap-reverse), e se for columns vai para a coluna ao lado esquerdo (se for normal) ou direito (Se for reverse).</p>
+<p>No caso abaixo, o eixo está no modo padrão, de cima para baixo. Coloquei o mesmo quadrado, com os mesmos itens e com as mesmas cores na mesma sequência que o de cima, porém neste eu coloquei wrap-reverse.</p>
+    <h3>Wrap em Row</h3>
+    <main class="container4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </main>
+    <h2>wrap-reverse em Row</h2>
+    <main class="container5">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </main>
+    <h3>Wrap em Column</h3>
+    <main class="container6">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </main>
+    <h2>wrap-reverse em column-reverse</h2>
+    <main class="container7">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </main>
+
+    <h1>Flex-flow</h1>
+    <p>Flex-flow é um shorthando: primeiro eu delaco a direção e depois o wrap:</p>
+    <ul>
+        <li>flex-flow: row wrap</li>
+        <li>flex-flow: column nowarp</li>
+        <li>flex-flow: column-reverse wrap-reverse</li>
+    </ul>
+
+</body>
+</html>
