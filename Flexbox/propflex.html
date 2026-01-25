@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Flex</title>
+
+    <style>
+
+    .container{
+        display: flex;
+        flex-flow: row nowrap;
+        width: 500px;
+        background-color: yellow;
+        padding: 10px;
+    }
+
+    .item{
+        flex: 0 1 150px;
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        margin: 0px 5px;
+    }
+
+    img{
+        margin: 10px 0px
+    }
+
+    </style>
+</head>
+<body>
+
+    <h1>Shorthand flex</h1>
+    <p>Flex-grow, flex-shrink e flex-basis podem ser declarados com apenas 1 propriedade: flex. Assim como outros shorthands, existe uma ordem na declaração:</p>
+    <ul>
+        <li>Grow</li>
+        <li>Shrink</li>
+        <li>Basis</li>
+    </ul>
+    <p>Primeiro declaro o valor de grow, depois de shrink depois de basis</p>
+    <main class="container">
+        <div class="item" style="order: 45;">45</div>
+        <div class="item" style="order: 934;">934</div>
+        <div class="item" style="order: 1;">1</div>
+    </main>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-25 141418.png">
+    <h1>Padrões de Uso</h1>
+    <p>Embora cada caso é um caso, acaba se tornando muito comum e recorrente o uso dos mesmos valores de grow, shrink e basis. Por isso, existem certos valores padrões:</p>
+    <h1>Flex: 0 1 auto (grow 0, shrink 1 e basis auto)</h1>
+    <p>Esse conjunto nem precisa ser declarado, pois ele é os valores padrões de cada uma dessas propridades.Lembrando: grow sempre tem valor 0, shrink sempre tem valor 1 e flex-basis sempre tem valor auto.</p>
+    <p>Outra forma de declarar o valor padrão (e isso para qualquer propriedade, não só flex) é usar o initial (flex: initial). Initial faz com que a propriedade seja setada em seus valores padrões.</p>
+    <h1>flex: 0 0 auto (grow: 0, shrink: 0, basis: auto)</h1>
+    <p>Esse conjunto torna o item inflexivel ao container, se adaptando somente ao conteúdo inserido dentro dele.</p>
+    <p>Outra forma de declarar essa "caracteristica" de inflexibilidade é usar o flex: none. </p>
+    <h1>Flex: 1 1 auto (grow: 1, shrink: 1, basis: auto)</h1>
+    <p>Esse é o oposto do anterior: o item vai se tornar totalmente flexivel. Ele vai crescer se o container crescer (grow 1), vai encolher se o container encolher (shrink 1) e o item vai se adaptar no tamanho conforme o conteúdo dentro dele (flex-basis: auto).</p>
+    <p>Uma outra forma de declarar esses valores é usar flex: auto.</p>
+    <h1>Declarar apenas 1 valor</h1>
+    <p>Se eu declarar apenas: flex: 3, o que acontece?</p>
+    <p>Nesse caso, será interpretado que grow terá o valor de 3, e todos os outros (shrink e basis) terão seus valores padrões. O mesmo vale para qualquer outro valor e só vale para grow.</p>    
+</body>
+</html>

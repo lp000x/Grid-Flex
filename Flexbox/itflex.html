@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Itens</title>
+
+    <style>
+
+        .container{
+            display: flex;
+            padding: 10px;
+            margin: 5px 0px;
+            flex-flow: row nowrap;
+            background-color: black;
+        }
+
+        .container1{
+            display: flex;
+            padding: 10px;
+            flex-flow: row wrap;
+            background-color: black;
+            width: 500px;
+            margin: 5px 0px;
+        }
+
+        .item{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 150px;
+        }
+
+        .item1{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 150px;
+        }
+
+        .item2{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 150px;
+            flex-grow: 1;
+        }
+
+        .item3{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+        }
+
+        .item4{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 200px;
+            flex-shrink: 1;
+        }
+
+        .item5{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 200px;
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+
+        .item6{
+            background-color: white;
+            margin: 0 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        .item7{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 1;
+        }
+
+        .itemg0{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        .itemg1{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 1;
+        }
+
+        .itemg2{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 2;
+        }
+        .itemg3{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 3;
+        }
+
+        .items0{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        .items1{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 1;
+            flex-grow: 0;
+        }
+        .items2{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 2;
+            flex-grow: 0;
+        }
+
+        .items3{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+            flex-shrink: 3;
+            flex-grow: 0;
+        }
+
+        #it1{
+            flex-basis: 100px;
+            flex-grow: 1;
+            flex-shrink: 0;
+            background-color: white;
+            margin: 5px 5px;
+        }
+
+        #it2{
+            flex-basis: 150px;
+            flex-grow: 0;
+            flex-shrink: 1;
+            background-color: white;
+            margin: 5px 5px;
+        }
+
+        #it3{
+            flex-basis: 300px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            background-color: white;
+            margin: 5px 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Flex-grow e flex-shrink</h1>
+    <ul>
+        <li>Flex-grow: o quanto um item (um elemento filho) pode crescer</li>
+        <li>flex-shrink: o quanto um item pode encolher</li>
+    </ul>
+    <p>Para esse tipo de definição funcionar o container precisa estar com nowrap, pois se ele pode quebrar, quando a largura se alterar, é o que vai fazer em vez de afetar a largura do item.</p>
+    <p>Por padrão, flex-shrink tem valor de 1, enquanto que Flex-growth tem valor 0. Isso significa que:</p>
+    <ul>
+        <li>flex-shrink: 1 - pode encolher</li>
+        <li>flex-growth: 0 - não pode aumentar</li>
+        <li>flex-shrink: 0 - não pode encolher</li>
+        <li>flex-growth: 1 - pode aumentar</li>
+    </ul>
+    <p>Nesse caso, 0 é um valor negativo, negando o comportamento. 1 é valor positivo, permitindo o comportamento. Porém, não existem só esses 2 valores.</p>
+    <h2>Mas o que exatamente é esse "crescer" e "encolher"?</h2>
+    <p>Crescer é quando a largura do container aumentar. Growth diz como o item vai se comportar quando a largura aumentar, mais especificamene, se vai acompanhar a largura ou não. Shrink é quando a largura do container diminui, dizendo como o item vai se comportar nesse caso.</p>
+    <main class="container">
+        <div class="item"><p>A</p></div>
+        <div class="item"><p>B</p></div>
+        <div class="item"><p>C</p></div>
+    </main>
+    <h1>Flex-growth</h1>
+    <p>flex-growth: 0 (isto é, não pode crescer):</p>
+    <main class="container">
+        <div class="item1"><p>A</p></div>
+        <div class="item1"><p>B</p></div>
+        <div class="item1"><p>C</p></div>
+    </main>
+    <p>flex-growth: 1 (pode crescer):</p>
+    <main class="container">
+        <div class="item2"><p>A</p></div>
+        <div class="item2"><p>B</p></div>
+        <div class="item2"><p>C</p></div>
+    </main>
+    <h1>flex-shrink</h1>
+    <p>flex-shrink: 0 (isto é, não pode encolher):</p>
+    <main class="container">
+        <div class="item3"><p>A</p></div>
+        <div class="item3"><p>B</p></div>
+        <div class="item3"><p>C</p></div>
+    </main>
+    <p>flex-shrink: 1 (pode encolher):</p>
+    <main class="container">
+        <div class="item4"><p>A</p></div>
+        <div class="item4"><p>B</p></div>
+        <div class="item4"><p>C</p></div>
+    </main>
+    <h1>Growth + Shrink</h1>
+    <p>Pode encolher e aumentar</p>
+    <main class="container">
+        <div class="item5"><p>A</p></div>
+        <div class="item5"><p>B</p></div>
+        <div class="item5"><p>C</p></div>
+    </main>
+    <p>Não pode nem encolher nem aumentar</p>
+    <main class="container">
+        <div class="item6"><p>A</p></div>
+        <div class="item6"><p>B</p></div>
+        <div class="item6"><p>C</p></div>
+    </main>
+    <h1>Growth e Shrink com Wrap</h1>
+    <p>Todos os exemplos acima estão, no container, com nowrap. O comportamento do grow muda com o wrap:</p>
+    <main class="container1">
+        <div class="item7"><p>A</p></div>
+        <div class="item7"><p>B</p></div>
+        <div class="item7"><p>C</p></div>
+    </main>
+    <p>Porque isso acontece? Porque wrap diz que os itens podem quebrar (pode ir para a linha debaixo) caso a largura do container não comporto todos. Quando 1 item só vai para baixo, ele está lá sozinho com toda a largura da nova linha. Grow 1 diz que ele pode ocupar toda a largura, então o item debaixo, faz isso: vai ocupar toda a largura que ele tem disponível.
+    </p>
+    <h1>Valores Diferentes</h1>
+    <p>Até agora, os únicos valores de grow e shrink foram 0 e 1, mas existem outros valores.</p>
+    <main class="container">
+        <div class="itemg0"><p>Grow: 0</p></div>
+        <div class="itemg1"><p>Grow: 1</p></div>
+        <div class="itemg0"><p>Grow: 0</p></div>
+    </main>
+    <main class="container">
+        <div class="itemg0"><p>Grow: 0</p></div>
+        <div class="itemg1"><p>Grow: 1</p></div>
+        <div class="itemg2"><p>Grow: 2</p></div>
+    </main>
+    <main class="container">
+        <div class="itemg0"><p>Grow: 0</p></div>
+        <div class="itemg2"><p>Grow: 2</p></div>
+        <div class="itemg3"><p>Grow: 3</p></div>
+    </main>
+    <main class="container">
+        <div class="itemg1"><p>Grow: 1</p></div>
+        <div class="itemg2"><p>Grow: 2</p></div>
+        <div class="itemg3"><p>Grow: 3</p></div>
+    </main>
+    <p>Quando os itens tem o mesmo valor, eles vão crescer por igual</p>
+    <main class="container">
+        <div class="itemg0"><p>Grow: 0</p></div>
+        <div class="itemg2"><p>Grow: 2</p></div>
+        <div class="itemg2"><p>Grow: 2</p></div>
+    </main>
+    <main class="container">
+        <div class="itemg0"><p>Grow: 0</p></div>
+        <div class="itemg3"><p>Grow: 3</p></div>
+        <div class="itemg3"><p>Grow: 3</p></div>
+    </main>
+    <p>Quando tem valores diferente, os itens crescem tendo como referência o menor valor (2 vezes maior que 1, 3 vezes maior que 1...)</p>
+    <h1>Shrink</h1>
+    <main class="container">
+        <div class="items0"><p>Shrink: 0</p></div>
+        <div class="items1"><p>Shrink: 1</p></div>
+        <div class="items0"><p>Shrink: 0</p></div>
+    </main>
+    <main class="container">
+        <div class="items0"><p>Shrink: 0</p></div>
+        <div class="items1"><p>Shrink: 1</p></div>
+        <div class="items2"><p>Shrink: 2</p></div>
+    </main>
+    <main class="container">
+        <div class="items0"><p>Shrink: 0</p></div>
+        <div class="items2"><p>Shrink: 2</p></div>
+        <div class="items3"><p>Shrink: 3</p></div>
+    </main>
+    <main class="container">
+        <div class="items1"><p>Shrink: 1</p></div>
+        <div class="items2"><p>Shrink: 2</p></div>
+        <div class="items3"><p>Shrink: 3</p></div>
+    </main>
+    <p>Quando os itens tem o mesmo valor, eles vão crescer por igual</p>
+    <main class="container">
+        <div class="items0"><p>Shrink: 0</p></div>
+        <div class="items2"><p>Shrink: 2</p></div>
+        <div class="items2"><p>Shrink: 2</p></div>
+    </main>
+    <main class="container">
+        <div class="items0"><p>Shrink: 0</p></div>
+        <div class="items3"><p>Shrink: 3</p></div>
+        <div class="items3"><p>Shrink: 3</p></div>
+    </main>
+    <h1>Flex-basis + flex-grow + flex-shrink</h1>
+    <p>É possível também usar as 3 propriedades em conjunto, não é só possível como o mais comum. Eu crio uma classe para cada elemento dentro do container (ou id) e nele eu defino valores diferentes para essas 3 propriedades.</p>
+    <main class="container">
+        <div id="it1"><p>100 e 0 e 1</p></div>
+        <div id="it2"><p>150 e 1 e 0</p></div>
+        <div id="it3"><p>300 1 e 1</p></div>
+    </main>
+    <p>Nesse caso, caso eu coloque valores maiores que 1, os itens "conversam" entre si. Ou seja, se 1 deles tiver com valor 1 e outro com valor 3, esse ultimo vai crescer ou encolher 3 vezes em relação ao valor 1 do outro item, por mais que não estejam na mesma classe.</p>
+    <h2>E um detalhe importante:</h2>
+    <p>Se eu colocar um grow 2 em um item e grow 1 no outro, não significa que o grow 1 terá, por exemplo, 100 px e o 2 200px. O 2 crescerá de forma proporcional, de forma que ele ocupe o dobro do <strong>espaço disponível</strong>. Esse fator de quanto cresce ou quanto diminui não é em relação a multiplicação, em em relação a quanto do espaço disponível cada um vai ocupar.</p>
+</body>
+</html>

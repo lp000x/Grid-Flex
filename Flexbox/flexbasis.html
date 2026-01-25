@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Basis</title>
+
+    <style>
+        .container{
+            background-color: black;
+            display: flex;
+            flex-flow: row wrap;
+            padding: 10px;
+            margin: 10px;
+            
+
+        }
+
+        .item{
+            background-color: white;
+            margin: 5px 5px;
+        }
+
+        .item1{
+            background-color: white;
+            margin: 5px 5px;
+            flex-basis: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flex Basis</h1>
+    <p>Flex-basis sempre vem com valor "auto" para o eixo principal (o horizontal). Isso significa que, por padrão, o item sempre vai ter uma largura que comporte o conteúdo que está dentro. Por mais que flex-basis atue só na largura, o item vai aumentar a altura para conseguir comportar todo o conteúdo mantendo a largura definida.</p>
+    <main class="container">
+        <div class="item"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quia dignissimos at asperiores dolorum modi facere atque repellat commodi distinctio quo deleniti ratione natus quod eos eveniet optio minus doloremque.</p></div>
+        <div class="item"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quia dignissimos at asperiores dolorum modi facere atque repellat commodi distinctio quo deleniti ratione natus quod eos eveniet optio minus doloremque.</p></div>
+        <div class="item"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quia dignissimos at asperiores dolorum modi facere atque repellat commodi distinctio quo deleniti ratione natus quod eos eveniet optio minus doloremque.</p></div>
+    </main>
+    <main class="container">
+        <div class="item"><p>A</p></div>
+        <div class="item"><p>ABCDEFGHIJK</p></div>
+        <div class="item"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quia dignissimos </p></div>
+    </main>
+    <p>Flex-basis auto, como dito antes, adapta o tamanho <strong>do item</strong> (não diretamente no container, mas no item) ao conteúdo que está dentro dele.</p>
+    <h1>Flex-basis: Xpx</h1>
+    <p>No flex-basis eu posso adicionar valors em px. Caso eu coloque flex-basis = 200px, todos os itens vão ter uma largura de 200 pixels, independente do conteúdo que esteja dentro. Para manter o conteúdo dentro do item e sem exceder os 200px de largura, a altura aumenta,</p>
+    <main class="container">
+        <div class="item1"><p>A</p></div>
+        <div class="item1"><p>ABCDEFGHIJK</p></div>
+        <div class="item1"><p>ABCDEFGHIJK</p></div>
+        <div class="item1"><p>ABCDEFGHIJK</p></div>
+        <div class="item1"><p>ABCDEFGHIJK</p></div>
+        <div class="item1"><p>ABCDEFGHIJK</p></div>
+        <div class="item1"><p>ABCDEFGHIJK</p></div>
+        <div class="item1"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quia dignissimos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, rem dicta. In aspernatur deleniti voluptas suscipit? Corporis, sed sequi molestias quaerat praesentium aperiam velit similique. Magnam reiciendis fugiat blanditiis neque.</p></div>
+    </main>
+    <p>Apenas de eu definir um valor em px, o flex-box não vai se manter nesse valor em qualquer tamanho de tela. Ele vai ir reduzindo conforme a tela reduz, e quando precisar, ele vai diminuir a largura dos itens. Em vez de 200px, por exemplo, ele vai ir reduzindo o valor para caber tudo (Até quebrar), mesmo eu tendo feito essa definição.</p>
+    <h2>Isso se...</h2>
+    <p>Vai reduzir o valor que eu defini em flex-basis se, lá no container, eu definir que não é para quebrar linhas (nowrap). Mas se eu definir que pode quebrar linhas (wrap), o valor (nesse caso 200px) se mantem.</p>
+</body>
+</html>

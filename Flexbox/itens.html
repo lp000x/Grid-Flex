@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomia dos Itens</title>
+
+    <style>
+
+        .container{
+            border: 2px solid black;
+            display: flex;
+            flex-flow: row wrap;
+            padding: 10px;
+        }
+
+        .item{
+            background-color: yellow;
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+            margin: 0px 5px;
+        }
+
+        .container1{
+            height: 200px;
+            display: flex;
+            padding: 10px;
+            flex-flow: row wrap;
+        }
+
+        #auto{
+            background-color: yellow;
+            border: 2px solid black;
+            width: 70px;
+            height: 50px;
+            margin: 0px 5px;
+            align-self: auto;
+            text-align: center;
+        }
+
+        #start{
+            background-color: yellow;
+            border: 2px solid black;
+            width: 70px;
+            height: 50px;
+            margin: 0px 5px;
+            align-self: flex-start;
+            text-align: center;
+        }
+
+        #end{
+            background-color: yellow;
+            border: 2px solid black;
+            width: 70px;
+            height: 50px;
+            margin: 0px 5px;
+            align-self: flex-end;
+            text-align: center;
+        }
+
+        #center{
+            background-color: yellow;
+            border: 2px solid black;
+            width: 70px;
+            height: 50px;
+            margin: 0px 5px;
+            align-self: center;
+            text-align: center;
+        }
+
+        #strech{
+            background-color: yellow;
+            border: 2px solid black;
+            width: 70px;
+            margin: 0px 5px;
+            align-self: stretch;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Container X Elementos</h1>
+    <p>Toda vez que eu criar um container e colocar nele elementos, que vai receber o display flex é o container. É possível tornar os elementos dentro da caixa display flex, mas isso não será visto nesse curso.</p>
+
+    <h1>Order</h1>
+    <p>Order é uma propriedade que dispõe os elementos em uma determinada ordem. Cada elemento vai receber um valor e eles serão organizados com base nele. Por padrão, o valor dos elementos é 0, ou seja, não tem preferencia de ordenamento.</p>
+    <main class="container">
+        <div class="item" style="order: 45;">45</div>
+        <div class="item" style="order: 934;">934</div>
+        <div class="item" style="order: 1;">1</div>
+        <div class="item" style="order: 74;">74</div>
+        <div class="item" style="order: 89;">89</div>
+        <div class="item" style="order: 32;">32</div>
+        <div class="item" style="order: 7;">7</div>
+    </main>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-21 090331.png">
+    <p>Neste exemplo, mesmo estando em ordem diferente no HTML os números seguiram a ordem na tela.</p>
+    <p>Na propriedade order, eu adiciono qualquer número. Os números negativos vem primeiro, seguido do 0 (lembrando que todo ou todos os itens sem valor declarado vem por padrão com valor 0) e os maiores vem depois.</p>
+    <p>Mas é no seguinte caso: quem vai aparecer primeiro, o B ou E? Os dois estão com valor 0.</p>
+    <main class="container">
+        <div class="item" style="order: 45;">A</div>
+        <div class="item" style="order: 0;">B</div>
+        <div class="item" style="order: 1;">C</div>
+        <div class="item" style="order: 74;">D</div>
+        <div class="item" style="order: 0;">E</div>
+        <div class="item" style="order: 32;">F</div>
+        <div class="item" style="order: 7;">G</div>
+    </main>
+    <p>Via de regra, na ordem vai aparecer primeiro os negativos, depois o primeiro 0 que vem no HTML, depois o segundo 0 e assim com todos eles. O "ordenamento" dos zeros é feito de acordo com qual item vem primeiro no HTML. Nesse caso, o B veio primeiro, então ele aparecerá antes do E.</p>
+    <h1>aling-self</h1>
+    <p>O aling-self é aplicado no eixo transversal, ou seja, no eixo vertical.</p>
+    <p>aling-self tem 5 valores:</p>
+        <main class="container1">
+        <div id="auto">AUTO</div>
+        <div id="start">START</div>
+        <div id="end">END</div>
+        <div id="center">CENTER</div>
+        <div id="strech">STRECH</div>
+
+    </main>
+
+    <ul>
+        <li>Auto: vai herdar a caracteristica de alinhamento de seu pai</li>
+        <li>flex-start: é o alinhamento no ponto que demarca o começo do eixo transversal</li>
+        <li>flex-end: é o alinhamento no ponto que demarca o final do eixo transversal</li>
+        <li>center: vai alinhar o item no centro do container</li>
+        <li>strech: vai fazer com que o item ocupe toda a altura do container</li>
+    </ul>
+
+    <p>Eu posso colocar align-items no container como uma configuração geral, mas caso eu altere diretamente no item ela vai se sobrepor.</p>
+</body>
+</html>
