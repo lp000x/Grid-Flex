@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Propriedades</title>
+
+    <style>
+        .container{
+            border: 4px solid blue;
+            display: grid;
+            width: 300px;
+            height: 300px;
+            grid-template: 100px 100px 100px / auto auto auto;
+            gap: 5px;
+            margin: auto;
+        }
+
+        .container1{
+            border: 4px solid blue;
+            display: grid;
+            width: 300px;
+            height: 300px;
+            grid-template: 100px 100px 100px / auto auto auto;
+            gap: 5px;
+            margin: auto;
+            grid-auto-rows: 100px;
+        }
+
+        .item{
+
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        h2, h1, p{
+            padding: 10px 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Grids Implicitos e Explicitos</h1>
+    <p>O grid explicito é aquele que aparece na tela: ou seja, são as propriedades e valores que eu defini. O grid implicito é o que acontece quando novas linhas ou colunas são adicionadas. Para essas linhas, não tem um valor, justamente porque eu não defini.</p>
+    <h1>grid-auto-rows</h1>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+    </div>
+
+    <p>Exista algo chamado "grid implicito". No exemplo a cima, caso eu coloque um item a mais, esse terceiro item não vai adquirir a mesma altura e largura dos itens anteriores. Isso acontece por em grid template (row e column) eu defini 3 colunas e 3 linhas. Na declaração, não tem nada para uma quarta linha. Para que eu os itens que foram adicionados depois permaneçam com as mesmas caracteristicas anteriores sem que eu precise ficar atualizando o grid template, basta usar o grid-auto-rows, para novas linhas, e grid-auto-column, para colunas.</p>
+
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
+    </div>
+
+    <i>
+        <h2>Com grid-auto-rows de 100px (o mesmo que defini para todas as outras linhas). A partir de agora, todas as linhas novas acrescentadas terão 100px.</h2>
+    </i>
+    <div class="container1">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
+    </div>
+
+    <h1>Shorthands</h1>
+    <h2>Place-itens</h2>
+    <p>O place itens é um shorthand para justify-items e align-items, seguindo a ordem align > justify, ou seja, primeiro se declara o valor de items e depois de justify</p>
+    <h2>Place-content</h2>
+    <p>É um shorthand para justify-content e align-content. A ordem de declaração também é align > justify</p>
+    <h2>Grid-template</h2>
+    <p>O grid-template é um shorthand para grid-template-columns e grid-template-rows. A ordem é row > column, com uma barra entre eles.</p>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-30 133710.png">
+</body>
+</html>

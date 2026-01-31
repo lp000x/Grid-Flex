@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades Grid Container</title>
+    
+    <style>
+        .container1{
+            display: grid;
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+        }
+        
+        .item{
+            height: 48px;
+            width: 48px;
+            border: 1px dashed black;
+        }
+
+        #margin{
+            margin-top: 100px;
+        }
+
+        .container2{
+            grid-template-columns: auto auto;
+            display: grid;
+            border: 1px solid black;
+            height: 100px;
+            width: 250px;
+
+        }
+
+        .container2-2{
+            margin-top: 20px;
+            grid-template-columns: auto auto auto;
+            display: grid;
+            border: 1px solid black;
+            height: 100px;
+            width: 250px;
+        }
+
+        .container3{
+            margin-top: 20px;
+            grid-template-columns: auto auto auto;
+            display: grid;
+            border: 1px solid black;
+            height: 300px;
+            width: 250px;
+            grid-template-rows: 100px;
+        }
+        .container3-3{
+            margin-top: 20px;
+            grid-template-columns: auto auto auto;
+            display: grid;
+            border: 1px solid black;
+            height: 300px;
+            width: 250px;
+            grid-template-rows: 52px;
+            gap: 100px;
+        }
+                    
+    </style>
+</head>
+<body>
+    <p>Lembrando: todas essas propriedades se aplicam apenas ao container. Se adicionar elas aos itens, não acontece nada.</p>
+    <h1>Display: grid;</h1>
+    <p>O display: grid torna um container uma grid. Automaticamente, ao definir esse display o container vira um grid e o que estive dentro dele grid items</p>
+    <p>Diferente do display: flex, nada muda de imediato, porém a tecnologia grid foi ativada. Para ter uma mudança visual, é preciso adicionar outras propriedades.</p>
+    <main class="container1">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <h1 id="margin">grid-template-columns: auto auto</h1>
+    <p>Essa propriedade diz que a grid terá um template de 2 colunas</p>
+    <main class="container2">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+    <main class="container2-2">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+    <p>O valor "auto" diz respeito a largura das colunas, instruindo a usar um valor automático, mas eu posso definir valores diferentes.</p>
+    <p>Além disso, a quantidade de valores que eu colocar é a quantidade de colunas que serão criadas. Se eu colocar auto auto, somente 2 colunas serão criadas. Se eu colocar auto auto auto 3 colunas serão criadas, e assim por diante.</p>
+    <h1>grid-template-rows</h1>
+    <p>É semelhante ao columns. Define a largura das linhas:</p>
+    <main class="container3">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+    <h1>gap</h1>
+    <p>Ogap cria um espaçamento entre os items. É possível alterar só da coluna ou só das rows, mas o grid-gap muda os 2.</p>
+    <main class="container3-3">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+</body>
+</html>

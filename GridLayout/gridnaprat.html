@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Na Pratica</title>
+    
+    <style>
+        .container{
+            border: 2px solid black;
+            display: grid;
+            height: 250px;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            gap: 4px;
+        }
+
+        .item{
+            background-color: blue;
+            padding: 5px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <i>
+        <h1>Shorthand para classes</h1>
+    </i>
+    <p>Caso eu vá criar uma div já sabendo que vou colocar um id ou class nela, em vez de criar a div e digitar class="xxx", eu já posso criar direito escrevendo <code>div.container</code>. Automaticamente será criada uma div já com a classe container. E caso eu queira criar vários itens dentro dessa div container com a mesma classe, basta eu digitar <code>div.item*7</code>. Esse * vezes um número indica quantas divs serão criadas com a classe item.</p>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </div>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-28 131851.png">
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aling e Justify Content</title>
+
+    <style>
+        
+        .container{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-content: start;
+        }
+
+        .container1{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .container2{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-content: end;
+        }
+
+        .container3{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-content: start;
+        }
+
+        .container4{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-content: center;
+        }
+
+        .container5{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-content: end;
+        }
+        
+        .container6{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-content: space-between;
+        }
+
+        .container7{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-content: space-around;
+        }
+
+        .container8{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-content: space-evenly;
+        }
+
+        .container9{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-content: space-around;
+        }
+
+        .container10{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-content: space-between;
+        }
+
+        .container11{
+            height: 300px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-content: space-evenly;
+        }
+
+        .item{
+            border: 1px dashed black;
+            background-color: yellow;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Como dito antes, existem 4 propriedades de posicionamento:</h1>
+
+    <p>O align, que posiciona na vertical:</p>
+    <ul>
+        <li>align-items: como visto antes, altera o posicionamento do conteúdo dentro do espaço dos grid itens verticalmente</li>
+        <li>align-content (será visto agora)</li>
+    </ul>
+
+    <p>O Justify, que posiciona na horizontal:</p>
+    <ul>
+        <li>justify-items: como visto anteriormente, altera o posicionamento do conteúdo dentro do espaço dos grid itens horizontalmente</li>
+        <li>Justify-content (será visto agora)</li>
+    </ul>
+
+    <p>São 2 propriedades align e 2 Justify. Nessa página, será visto o align-content e Justify-content</p>.
+
+    <h1>Justify-content</h1>
+    <p>Lembrando que justify-content é na horizontalmente. Talvez a palavra "centralizar" faça imaginar um item no centro de um quadrado, mas não é isso que Justify faz.</p>
+    <p>O valor start faz o conjunto ficar colado no topo da grid.</p>
+        <div class="container">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>Justify-content: space-around</h2>
+    <p>Faz com que os conteúdos tenham o mesmo espaço entre eles e a borda do grid container e dobre o espaço na parte de dentro.</p>
+        <div class="container1">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>Justify-content: space-evenly</h2>
+    <p>O valor space evenly faz com que as tracks do conjunto tenha a mesma distância</p>
+        <div class="container2">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+    
+    <h1>Align-content</h1>
+    <p>Assim como o justify-content, align-content muda o posicionamento do conjunto do conteúdo (e dos grid items).</p>
+    
+    <h2>Justify-content: start</h2>
+    <p>O valor start faz o conjunto ficar colado no topo da grid.</p>
+        <div class="container3">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>Justify-content: center</h2>
+    <p>O valor center faz o conjunto ficar no meio (verticalmente) da grid.</p>
+        <div class="container4">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>Justify-content: end</h2>
+    <p>O valor end faz o conjunto ficar colado na parte inferior (vertical) da grid.</p>
+        <div class="container5">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+    
+    <h1>Space-between, Space-around e Space-evenly</h1>
+    <p>Lembrando de como essas propriedade funcionam:</p>
+    <ul>
+        <li>space-between: coloca um item ou track no topo, outra na parte inferior e o que mais tiver centralizado</li>
+        <li>space-evenly: faz com que o espaço entre os itens sejam os mesmos</li>
+        <li>space-around: faz com que o espaço "around" (ou seja, nas bordas, entre o conteúdo e o container grid) tenham o mesmo espaço, mas na parte de dentro do conteúdo o espaço seja dobrado</li>
+    </ul>
+
+    <h1>Justify-content</h1>
+    <p>Lembrando que justify-content é na horizontalmente. Talvez a palavra "centralizar" faça imaginar um item no centro de um quadrado, mas não é isso que Justify faz.</p>
+
+    <h2>Justify-content: space-between</h2>
+    <p>Faz com que uma track seja colocada em uma borda, a outra track seja colocada em outra borda e as tracks restantes no centro</p>
+        <div class="container6">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>Justify-content: space-around</h2>
+    <p>Faz com que os conteúdos tenham o mesmo espaço entre eles e a borda do grid container e dobre o espaço na parte de dentro.</p>
+        <div class="container7">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>Justify-content: space-evenly</h2>
+    <p>O valor space evenly faz com que as tracks do conjunto tenha a mesma distância</p>
+        <div class="container8">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+    
+    <h1>Align-content</h1>
+    
+    <h2>align-content: space-between</h2>
+    <p>O valor start faz o conjunto ficar colado no topo da grid.</p>
+        <div class="container9">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">E</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>align-content: space-around</h2>
+    <p>O valor center faz o conjunto ficar no meio (verticalmente) da grid.</p>
+        <div class="container10">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">E</div>
+            <div class="item">E</div>
+        </div>
+
+    <h2>align-content: Space-evenly</h2>
+    <p>O valor end faz o conjunto ficar colado na parte inferior (vertical) da grid.</p>
+        <div class="container11">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+</body>
+</html>

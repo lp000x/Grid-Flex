@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades de Itens</title>
+
+    <style>
+        .container{
+            display: grid;
+            grid-template: 100px 100px 100px / repeat(4, 1fr);
+            border: 5px solid blue;
+        }
+
+        .item{
+            border: 1px solid black;
+        }
+
+        .caixa1{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            background-color: black;
+        }
+
+        .caixa2{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .caixa3{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            background-color: blue;
+        }
+
+        .caixa4{
+            grid-row-start: 1;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: black;
+        }
+
+        .caixa5{
+            grid-row-start: 1;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+
+        .caixa6{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            background-color: blue;
+        }
+
+        .caixa7{
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            background-color: black;
+        }
+
+        .caixa8{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            background-color: yellow;
+        }
+
+        .caixa9{
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Propiedades Para Itens</h1>
+    <p>Relembrando: da mesma forma que as propriedades de container só funcionam em container, propriedades para itens só funcionam em itens.</p>
+    <h2>Grid areas</h2>
+    <p>Os grid areas me permitem criar espaços dentro de um container. Aqui a abordagem diferente: é como se eu deixasse de ver os grid-itens como lugares individuais onde vão cada elemento e visse toda a área quadriculada, onde posso desenhar qual espaço quero ocupar.</p>
+    <h2>Como Definir Grid Areas</h2>
+    <p>Para definir as áreas, eu vou precisar ter em mente a numeração das grid lines. Lembrando que eu posso ver elas usando o tools dev do google.</p>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-30 145607.png" alt="">
+
+    <p>Outra coisa que vou precisar é das seguintes propriedades: grid-row e column-row</p>
+    <ul>
+        <li>Grid-row-start: aqui eu vou definir em qual linha começa a caixa, usando a numeração das grid lines;</li>
+        <li>grid-row-end: vou definir onde termina a linha da caixa, também usando a numeração das grid lines;</li>
+        <li>grid-column-start: vou definir em qual coluna começa a caixa (usando a numeração)</li>
+        <li>grid-column-end: vou definir em qual coluna termina a caixa (também usando a numeração)</li>
+    </ul>
+    <p>O que são essas 4 propriedades? Simples: elas demarcam o começo e fim. Grid-row (start e end) define em qual linha a área começa e qual linha termina (define a altura do elemento, digamos assim), grid-column define em qual coluna começa e qual termina a área coluna (ou seja, define a largura da área.). É como se eu estivesse desenhando um quadrado com determinada largura e altura através de coordenadas.</p>
+
+    <p>Para criar as 3 caixas, eu preciso criar 3 divs. Se quiser criar mais ou menos caixas, basta usar a quantidade respectiva de divs. Vou colocar uma classe nas divs para usar no css e configurar a área da caixa. No CSS, eu vou chamar as classes e usar os grid-row e grid-column para definir o tamanho delas.</p>
+
+    <main class="container">
+        <div class="caixa1">Caixa 1</div>
+        <div class="caixa2">Caixa 2</div>
+        <div class="caixa3">Caixa 3</div>
+
+    </main>
+    <main class="container">
+        <div class="caixa4">Caixa 1</div>
+        <div class="caixa5">Caixa 2</div>
+
+    </main>
+    <main class="container">
+        <div class="caixa7">Caixa 1</div>
+        <div class="caixa8">Caixa 2</div>
+        <div class="caixa9">Caixa 3</div>
+
+    </main>
+
+    <i>
+        <h1>ATENÇÃO AO DETALHES</h1>
+    </i>
+
+    <p>Os números que estiverem nas laterais da grid são as linhas (as linhas horizontais). Os números que estiverem em cima e em baixo são as linhas das colunas (as linhas "em pé")</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades Itens 2</title>
+
+    <style>
+    .container{
+        display: grid;
+        grid-template: repeat(3, 100px) / repeat(3, auto);
+        border: 5px solid blue;
+        
+    }
+
+    .caixa{
+        border: 1px solid black;
+    }
+
+
+    .caixa1{
+        grid-area: 1 / 1 / 4 / 2;
+        background-color: yellow;
+    }
+
+
+    </style>
+</head>
+<body>
+    <h1>Span</h1>
+    <p>Como visto no video anterior, para se definir uma caixa é usado start e end, para grid-row e para grid-column. Vou lá no google tools, ativo o grid e vejo a numeração de todas as lines grids, tanto horizontais quanto verticais.</p>
+    <p>Mas existe outra forma de definir a área, que é usando o span. Para usar o span, eu defino onde começa a área, mas no end (grid-row-end e/ou grid-column-end) em vez de colocar a coluna ou linha que marca o fim da área eu coloco span e quantidade de grid itens que a caixa vai ocupar.</p>
+    <p>Se a caixa começa em row-1 e vai até a 4, em vez de colocar row-4 eu declaro span 3. 3 porque a partir da primeira linha a caixa vai ocupar 3 grid itens na horizontal. É sempre assim: quantos grid itens a caixa vai ocupar partindo do star (grid-row-start e/ou grid-column-start)</p>
+    <main class="container">
+        <div class="caixa1"></div>
+        <div class="caixa2"></div>
+        <div class="caixa3"></div>
+    </main>
+    
+    <h1>Simplificando grid</h1>
+    <p>Em vez de ficar repetindo grid-row-start, grid-row-end e column-row-start, column-row-end eu posso simplesmente usar grid-row: X / X e grid-column: X / X. Esses "x" são, o start e end. O primeiro X é o start e o segundo x é o end.</p>
+    <h1>Simplificando ainda mais</h1>
+    <p>Existe uma declaração ainda mais objetiva para a grid area, que é usando justamente a propriedade grid-area. Em vez de ter 2 declarações ou 4, eu tenho só 1, nessa ordem></p>
+
+    <i>
+        <h2>grid row start / grid column start / grid row end / grid column end</h2>
+    </i>
+    
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align E Justify</title>
+
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+
+        }
+
+        .container1{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-items: stretch;
+        }
+
+        .container2{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-items: start;
+        }
+
+        .container3{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .container4{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            align-items: end;
+        }
+
+        .container5{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-items: stretch;
+        }
+
+        .container6{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-items: start;
+        }
+
+        .container7{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-items: center;
+        }
+
+        .container8{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 50px 50px 50px 50px;
+            border: 1px solid black;
+            gap: 5px;
+            justify-items: end;
+        }
+
+        .item{
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Align X Justify</h1>
+    <p>Sempre é necessário usar essas propriedades para mudar o posicionamento dos itens, mas sempre existe confusão também, uma confusão maior ainda quando não se para e define com clareza qual faz o que.</p>
+    <h2>Align-items Align-content</h2>
+    <p>O "align", independente se for item ou conteúdo, é o alinhamento vertical.</p>
+    <h2>Justify-items Justify-content</h2>
+    <p>O "Justify", independente se é item ou conteúdo, é o alinhamento horizontal.</p>
+    <h2>Items X Content</h2>
+    <p>Itens são os items individualmente. No caso dessa tabela, é o A, B, C, D e etc. Content é o conjunto, como se todas as letras fossem 1 coisa só.</p>
+    <strong>Apesar das diferenças, todos eles são aplicados no container (ou seja, em quem recebe o display grid).</strong>
+
+    <main class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+    </main>
+
+    <h1>Align-items</h1>
+    <p>É muito fácil confundir esse tipo de coisa. Onde o align-items afeta? O que ele muda? O grid container tem vários quadradinhos (justamente, os gride itens, lembrando da anatomia da grid). O align-items não vai alterar o container, a grid. É 1 configuração que vai alterar todos os quadradinhos (os grid items) dentro do container. Dependendo da largura dos grid itens, não são quadradinhos, são reangulos o "quadradões", mas ainda assim são os grid itens, os mesmos que o aling-items altera.</p>
+    <p>Mais especifico ainda, essas alterações dizem respeito ao posicionamento. Não é o grid item em si que será alterado, mas o item que está dentro dele. O grid item é um espaço, assim como o container. Dentro do container tem os grid items, e dentro dos grid items tem os itens. É nos itens que o align-items atua.</p>
+    <h2>Align-items: strech</h2>
+    <p>O strech faz os itens se esticarem até alcançarem as grid lines</p>
+    <main class="container1">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+    <h2>align-items: start</h2>
+    <p>O start faz os itens ficarem próximos ao começo do grid item (lá no topo)</p>
+    <main class="container2">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+
+    <h2>align-items: center</h2>
+    <p>O end coloca o conteúdo no meio do espaço de seu grid item.</p>
+    <main class="container3">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+
+    <h2>align-items: end</h2>
+    <p>O end coloca o conteúdo colado na parte inferior do espaço grid item./p>
+    <main class="container4">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+
+    <h1>Justify-items</h1>
+    <p>Os valores de align-items são os mesmos para Justify-content, a diferença é que eles modificam horizontalmente em vez de verticalmente</p>
+
+    <h2>Justify-content: strech</h2>
+    <p>O strech faz os itens se esticarem até alcançarem as grid lines</p>
+    <main class="container5">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+    <h2>Justify-content: start</h2>
+    <p>O start faz os itens ficarem próximos ao começo do grid item (lá no topo)</p>
+    <main class="container6">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+
+    <h2>justify-items: center</h2>
+    <p>O end coloca o conteúdo no meio do espaço de seu grid item.</p>
+    <main class="container7">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+
+    <h2>justify-items: end</h2>
+    <p>O end coloca o conteúdo colado na parte inferior do espaço grid item./p>
+    <main class="container8">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+    </main>
+
+</body>
+</html>

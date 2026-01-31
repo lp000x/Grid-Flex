@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ainda Mais Propriedades</title>
+    
+    <style>
+
+
+
+        .container{
+            display: grid;
+            grid-template: repeat(3, 100px) / repeat(3, auto);
+            border: 5px solid blue;
+            width: 300px;
+            gap: 5px;
+            grid-auto-rows: 100px;
+        }
+
+        .container1{
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            border: 5px solid blue;
+            width: 1500px;
+            gap: 5px;
+            grid-auto-rows: 100px;
+        }
+
+        .container2{
+            display: grid;
+            grid-template-columns: 100px 20% 1fr 1fr;
+            border: 5px solid blue;
+            width: 1500px;
+            gap: 5px;
+            grid-auto-rows: 100px;
+        }
+
+        .container3{
+            display: grid;
+            grid-template-columns: 340px 38% 2fr 1fr;
+            border: 5px solid blue;
+            width: 1000px;
+            gap: 5px;
+            grid-auto-rows: 100px;
+        }
+
+        .container4{
+            display: grid;
+            grid-template: 100px 100px 100px / auto auto auto;
+            grid-auto-rows: 100px;
+            grid-auto-columns: 100px;
+            border: 5px solid blue;
+            width: 1000px;
+            gap: 5px;
+            grid-auto-flow: row;
+        }
+
+        .container5{
+            display: grid;
+            grid-template: 100px 100px 100px / auto auto auto;
+            grid-auto-rows: 100px;
+            grid-auto-columns: 100px;
+            border: 5px solid blue;
+            width: 1000px;
+            gap: 5px;
+            grid-auto-flow: column;
+        }
+
+        .item{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Repeat(x, x)</h1>
+    <p>A função repeat é mais uma simplificação. Na hora de definir as colunas e linhas, eu coloco o valor do tamanho e da quantidade de linhas e colunas que vão ter. Se eu colocar grid-template-column 100px 100px 100px, terão 3 colunas de 100px (largura e altura.) Se eu colocar 100px 100px 100px 100px vão ter 4 colunas de 100px. O repeat serve para isso: em vez de ficar repetindo o valor, eu posso usar grid-template-column: repeat(4, 100px)</p>
+    <img src="c:\Users\Luis Paulo\OneDrive\Imagens\Capturas de tela\Captura de tela 2026-01-30 134854.png">
+    <main class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </main>
+
+    <h1>Unidade Fracional</h1>
+    <p>A unidade fracional é aplicada sobre o grid-template-column e grid-template-rows. Ela me permite dizer quantas linhas e colunas a grid terá e qual será o tamanho de cada um das linhas e colunas, porém em relação ao tamanho total do container.</p>
+
+    <p>Se eu tiver um container:</p>
+    <ul>
+        <li>Largura de 1.500px</li>
+        <li>grid-template-column: 1fr 2fr 2fr</li>
+        <li>Item A = 1fr, B = 2fr, C = 2fr</li>
+    </ul>
+    <p>O seguinte calculo será feito: o container será divido por 5 (1 + 2 + 2), que dará 300px. Como, no exemplo acima, A = 1fr, B = 2fr e C = 2fr, o A terá 1 parte desse valor (300px), b terá 2 partes desse valor (600px) e C, como também tem 2fr, terá 2 partes desse valor (600px).</p>
+    <main class="container1">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </main>
+    <h1>Mistura</h1>
+    <p>Eu defino o seguinte valor: 100px 20% 1fr 1fr</p>
+    <main class="container2">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+    </main>
+    <ul>
+        <li>O valor em px (100px) terá esse valor fixo em qualquer parte que eu colocar ele;</li>
+        <li>O valor em porcentagem (20%) é em relação ao tamanho total do container, não do que sobrou (e que sobrará após as outras medidas). Nesse exemplo, o container tem 1500px, então será 20% de 1500px (300px);</li>
+        <li>O valor em fração (fr) serão feitas com base no que sobra após o valor definido em px e %. Nesse exemplo, px ocupa 100px e % ocupa 20%, que dá 300px. Ou seja, os dois somam 400px. O valor da fração será calculado com base no que sobrou, ou seja, com base em 1100px</li>
+    </ul>
+    <main class="container3">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+    </main>
+
+    <i>
+        <h2>RELEMBRANDO O CALCULO DE FR</h2>
+    </i>
+
+    <p>Para que eu saiba de antemão como os elementos ficarão é preciso fazer uma soma nas minhas próprias definções: qual a soma dos fr que eu declarei?</p>
+    <ul>
+        <li>Se declarei: 1fr 2fr 3fr, a soma é 5 (1+2+3)</li>
+        <li>Se declarei: 2fr 6fr 1fr, a soma é 9 (2+5+1)</li>
+        <li>Se declarei: 1fr 1fr, a soma é 2</li>
+        <li>Se declarei: 1fr 1fr 2fr 3fr 1fr, a soma é 8</li>
+    </ul>
+
+    <p>Então tem 2 formas diferentes para a divisão do espaço: somente com os fr e com outras medidas</p>
+    <h3>Só com fr. Ex de width: 1000</h3>
+    <p>Se tiver só fr, o sistema pegará o width do container e divira pela minha soma.</p>
+    <h3>fr + outras medidas. Ex de width: 1000 e 100px + 20%</h3>
+    <p>Se tiver outras medidas, como % e px ou só um dos dois (com o fr), primeiro o sistema subtrairá os valores fixos da largura do container. Nesse exemplo, px é 100px e % é 20%. 20% de 1000 é 200px. 100px + 200px = 300px. Então esse valor das medidas (px e/ou %) será subtraidas da largura, nesse caso 1000 - 300 = 700px.</p>
+    <p>O calculo de quanto espaço os fr ocupará será feitom então, com base no que sobrou: 700px</p>
+
+    <h1>grid-auto: flow</h1>
+    <p>O grid-auto: flow me permite instruir em qual direção um item novo deve ser adicionado quando tiver quebra de linh, se em linha (e então ele será colocado na vertical) ou se em coluna (e então será colocadona horizontal)</p>
+
+    <h3>X em grid-auto-flow: row (valor padrão)</h3>
+    <main class="container4">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">X</div>
+    </main>
+
+    <h3>X em grid-auto-flow: column</h3>
+    <main class="container5">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">X</div>
+    </main>
+
+
+</body>
+</html>
